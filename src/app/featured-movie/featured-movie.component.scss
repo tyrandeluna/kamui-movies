@@ -1,0 +1,11 @@
+.featured-container {
+    border: solid;
+    background: linear-gradient(180deg, rgba(10, 8, 12, 0) 76.04%, #0A080C 100%), 
+                url(../../assets/featured-movie/featured-movie.png);
+    background-position: 40% 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 350px;
+    width: 100%;
+}
