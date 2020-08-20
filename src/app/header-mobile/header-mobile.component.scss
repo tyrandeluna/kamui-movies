@@ -1,0 +1,15 @@
+@import '../../sass/variables.scss';
+
+.header-mobile {
+    align-items: center;
+    border: solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+
+.fa-search {
+    color: $g-white;
+    font-size: 32px;
+}
