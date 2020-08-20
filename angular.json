@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "kamui-movies"
+    }
+  },
+  "defaultProject": "kamui-movies",
+  "cli": {
+    "analytics": false
+  }
 }
