@@ -12,6 +12,7 @@
     padding: 10px 0px;
     width: 100%;
 
+    //left margin of the second element onwards
     app-movie-tile:nth-child(n + 2) {
         margin-left: 18px;
     }

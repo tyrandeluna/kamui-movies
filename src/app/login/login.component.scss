@@ -1,0 +1,66 @@
+@import '../../sass/variables.scss';
+
+
+.forgot-pass {
+    align-self: flex-start;
+    color: $medium-purple;
+    margin: 20px 0 0 0;
+    text-decoration: underline;
+}
+
+.login-col {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $roboto;
+    justify-content: center;
+
+    .welcome-title {
+        color: $light-purple;
+        font-weight: 900;
+        font-size: 24px;
+        margin: 16px 0 16px 0;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        background: $g-white;
+        border: none;
+        border-radius: 10px;
+        font: 18px $roboto;
+        height: 40px;
+        margin-bottom: 25px;
+        padding: 0 16px;
+        width: 300px;
+        
+        &::placeholder {
+            color: $lavender-blue;
+            font: 18px $roboto;
+        }
+    }
+
+    .login-btn {
+        background: $main-purple;
+        box-shadow: 1px 2px 0px $persian-indigo;
+        border: none;
+        border-radius: 5px;
+        color: $g-white;
+        font: 20px $roboto;
+        height: 36px;
+        width: 120px;
+    }
+}
+
+.login-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $roboto;
+    justify-content: center;
+    padding: 72px 30px;
+    width: 100%;
+}
