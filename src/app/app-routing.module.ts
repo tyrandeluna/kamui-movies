@@ -4,10 +4,12 @@ import { FeaturedMovieComponent } from './featured-movie/featured-movie.componen
 import { MovieComponent } from './movie/movie.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'login', component: LoginComponent}
+  { path: 'favorites', component: FavoritesComponent },
+  { path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
