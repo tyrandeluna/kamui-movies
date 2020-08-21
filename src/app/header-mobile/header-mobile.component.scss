@@ -1,5 +1,22 @@
 @import '../../sass/variables.scss';
 
+.fa-search {
+    color: $g-white;
+    font-size: 32px;
+}
+
+.filter {
+    background: $main-purple;
+    border: none;
+    border-radius: 5px;
+    color: $g-white;
+    filter: drop-shadow(2px 2px 0px $persian-indigo);
+    font-size: 28px;
+    margin-left: 10px;
+    height: 34px;
+    width: 34px;
+}
+
 .header-mobile {
     align-items: center;
     display: flex;
@@ -9,7 +26,13 @@
     width: 100%;
 }
 
-.fa-search {
-    color: $g-white;
-    font-size: 32px;
+.logo-title {
+    align-items: center;
+    color: $main-purple;
+    display: flex;
+    font: 18px $roboto;
+
+    .title-page {
+        margin-left: 12px;
+    }
 }

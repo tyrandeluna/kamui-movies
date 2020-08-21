@@ -1,5 +1,12 @@
 <header class="header-mobile">
-    <img src="../../assets/headers/logo-icon.svg" alt="Kamui Movies Icon">
+    <div class="logo-title">
+        <img src="../../assets/headers/logo-icon.svg" alt="Kamui Movies Icon">
+        <h2 class="title-page" *ngIf="route.url == '/favorites'">My Favorites</h2>
+        <h2 class="title-page" *ngIf="route.url == '/categories'">All Movies</h2>
+    </div>
 
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <div class="search-filters">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <button class="filter" *ngIf="route.url == '/favorites'"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+    </div>
 </header>
