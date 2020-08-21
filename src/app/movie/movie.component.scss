@@ -2,6 +2,7 @@
 
 .movies-list {
     display: flex;
+    flex-direction: column;
     padding: 28px 14px;
     width: 100%;
 }
@@ -9,6 +10,7 @@
 .movie-tiles {
     display: flex;
     //justify-content: space-between;
+    padding: 10px 0px;
     width: 100%;
 
     app-movie-tile:nth-child(n + 2) {
@@ -16,14 +18,14 @@
     }
 }
 
-.releases-list {
+.releases-list, .rising-list {
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    .release-title {
+    .release-title, .rising-title {
         color: $g-white;
         font: 20px $roboto;
-        margin-bottom: 10px;
+        //margin-bottom: 10px;
     }
 }
