@@ -1,0 +1,14 @@
+@import '../../sass/variables.scss';
+
+.favorite-list {
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 84px 0 0 0;
+    width: 100%;
+
+    app-movie-tile:nth-child(n + 3) {
+        margin-top: 22px;
+    }
+}
