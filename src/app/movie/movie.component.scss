@@ -9,7 +9,6 @@
 
 .movie-tiles {
     display: flex;
-    //justify-content: space-between;
     padding: 10px 0px;
     width: 100%;
 
@@ -26,6 +25,5 @@
     .release-title, .rising-title {
         color: $g-white;
         font: 20px $roboto;
-        //margin-bottom: 10px;
     }
 }
