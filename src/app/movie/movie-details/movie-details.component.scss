@@ -1,0 +1,67 @@
+@import '../../../sass/variables.scss';
+
+.movie {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.blur-banner {
+    background: linear-gradient(0deg, $rich-black 0.06%, rgba(0, 0, 0, 0) 18.53%), url(../../../assets/movies/john-wick-3.png);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 40% 40%;
+    display: flex;
+    filter: blur(4px);
+    height: 400px;
+    width: 100%;
+    z-index: -1;
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+}
+
+.movie-cover {
+    background: url(../../../assets/movies/john-wick-3.png);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: 40% 40%;
+    display: flex;
+    height: 264px;
+    position: absolute;
+    top: 70px;
+    width: 236px;
+}
+
+.movie-info {
+    color: $g-white;
+    display: flex;
+    flex-direction: column;
+    font-family: $roboto;
+    align-items: center;
+    position: absolute;
+    top: 342px;
+    width: 100%;
+
+    .title {
+        font-weight: 900;
+        font-size: 26px;
+    }
+
+    .info {
+        font-weight: 200;
+        font-size: 14px;
+        word-spacing: 1px;
+    }
+
+    .rating {
+        background: $r-rating;
+        border-radius: 2px;
+        font-weight: bold;
+        padding: 2px 6px;
+    }
+}
+
