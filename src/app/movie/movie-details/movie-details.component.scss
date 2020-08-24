@@ -1,13 +1,5 @@
 @import '../../../sass/variables.scss';
 
-.movie {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
 .blur-banner {
     background: linear-gradient(0deg, $rich-black 0.06%, rgba(0, 0, 0, 0) 18.53%), url(../../../assets/movies/john-wick-3.png);
     background-repeat: no-repeat;
@@ -23,6 +15,14 @@
     -o-filter: blur(4px);
     -ms-filter: blur(4px);
 }
+
+.movie {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+} 
 
 .movie-cover {
     background: url(../../../assets/movies/john-wick-3.png);
@@ -46,11 +46,6 @@
     top: 342px;
     width: 100%;
 
-    .title {
-        font-weight: 900;
-        font-size: 26px;
-    }
-
     .info {
         font-weight: 200;
         font-size: 14px;
@@ -62,6 +57,11 @@
         border-radius: 2px;
         font-weight: bold;
         padding: 2px 6px;
+    }
+
+    .title {
+        font-weight: 900;
+        font-size: 26px;
     }
 }
 
