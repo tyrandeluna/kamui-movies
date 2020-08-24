@@ -1,5 +1,31 @@
 @import '../../../sass/variables.scss';
 
+.action-buttons {
+    align-items: center;
+    color: $g-white;
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    margin: 18px 0 18px 0;
+    width: 78%;
+
+    .watch-button {
+        background: $main-purple;
+        border-style: none;
+        border-radius: 5px;
+        box-shadow: 1px 2px 0px $persian-indigo;
+        color: $g-white;
+        font-family: $roboto;
+        font-size: 12px;
+        width: 210px;
+        height: 26px;
+    }
+
+    .fa-heart-o, .watch-button {
+        margin-right: 10px;
+    }
+}
+
 .blur-banner {
     background: linear-gradient(0deg, $rich-black 0.06%, rgba(0, 0, 0, 0) 18.53%), url(../../../assets/movies/john-wick-3.png);
     background-repeat: no-repeat;
@@ -31,25 +57,32 @@
     background-position: 40% 40%;
     display: flex;
     height: 264px;
-    position: absolute;
     top: 70px;
     width: 236px;
 }
 
+.movie-details-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+}
+
 .movie-info {
+    align-items: center;
     color: $g-white;
     display: flex;
     flex-direction: column;
     font-family: $roboto;
-    align-items: center;
-    position: absolute;
-    top: 342px;
+    margin-top: 10px;
     width: 100%;
 
     .info {
         font-weight: 200;
-        font-size: 14px;
-        word-spacing: 1px;
+        font-size: 15px;
+        word-spacing: 2px;
     }
 
     .rating {
@@ -61,7 +94,6 @@
 
     .title {
         font-weight: 900;
-        font-size: 26px;
+        font-size: 28px;
     }
 }
-
