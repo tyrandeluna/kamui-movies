@@ -1,5 +1,11 @@
 @import '../../sass/variables.scss';
 
+.fa-arrow-left {
+    color: $g-white;
+    filter: drop-shadow(2px 2px 0px $persian-indigo);
+    font-size: 28px;
+}
+
 .fa-search {
     color: $g-white;
     font-size: 32px;

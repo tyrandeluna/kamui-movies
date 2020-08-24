@@ -1,12 +1,21 @@
 <header class="header-mobile">
     <div class="logo-title">
-        <img src="../../assets/headers/logo-icon.svg" alt="Kamui Movies Icon">
+        <!-- not appears in movie detail page -->
+        <img src="../../assets/headers/logo-icon.svg" *ngIf="route.url != '/movie-details'" alt="Kamui Movies Icon">
+
+        <!-- only appears in movie detail page -->
+        <a routerLink="../" class="fa fa-arrow-left" aria-hidden="true" *ngIf="route.url == '/movie-details'"></a>
+
+        <!-- only appears in your respective page -->
         <h2 class="title-page" *ngIf="route.url == '/favorites'">My Favorites</h2>
         <h2 class="title-page" *ngIf="route.url == '/categories'">All Categories</h2>
     </div>
 
     <div class="search-filters">
-        <i class="fa fa-search" aria-hidden="true"></i>
+        <!-- not appears in movie detail page -->
+        <i class="fa fa-search" aria-hidden="true" *ngIf="route.url != '/movie-details'"></i>
+
+        <!-- only appears in favorites and all categories page -->
         <button class="filter" *ngIf="route.url == '/favorites' || route.url == '/categories'"><i class="fa fa-sliders" aria-hidden="true"></i></button>
     </div>
 </header>
