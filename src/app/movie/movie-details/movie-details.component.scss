@@ -7,7 +7,7 @@
     font-size: 20px;
     justify-content: space-between;
     margin: 18px 0 18px 0;
-    width: 78%;
+    width: 92%;
 
     .watch-button {
         background: $main-purple;
@@ -65,9 +65,28 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding: 0 26px 50px 26px;
     position: absolute;
     top: 70px;
     width: 100%;
+}
+
+.movie-details {
+    color: $g-white;
+    display: flex;
+    flex-direction: column;
+    font-family: $roboto;
+    font-weight: 300;
+
+    .cast, .direction {
+        font-weight: 250;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .synopsis {
+        font-size: 14px;
+    }
 }
 
 .movie-info {
