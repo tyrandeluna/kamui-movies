@@ -12,6 +12,7 @@ import { MovieDetailsComponent } from './movie/movie-details/movie-details.compo
 import { MovieTileComponent } from './movie/movie-tile/movie-tile.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AllCategoriesComponent } from './all-categories/all-categories.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     MovieDetailsComponent,
     MovieTileComponent,
     FavoritesComponent,
-    HomePageComponent
+    HomePageComponent,
+    AllCategoriesComponent
   ],
   imports: [
     BrowserModule,
