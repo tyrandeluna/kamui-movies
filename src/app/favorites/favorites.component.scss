@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 84px 0 0 0;
+    padding: 84px 0 50px 0;
     width: 100%;
 
     app-movie-tile:nth-child(n + 3) {
