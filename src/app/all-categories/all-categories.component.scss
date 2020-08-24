@@ -1,0 +1,30 @@
+@import '../../sass/variables.scss';
+
+.categories-list {
+    display: flex;
+    flex-direction: column;
+    padding: 72px 14px;
+    width: 100%;
+}
+
+.movie-tiles {
+    display: flex;
+    padding: 10px 0px;
+    width: 100%;
+
+    //left margin of the second element onwards
+    app-movie-tile:nth-child(n + 2) {
+        margin-left: 18px;
+    }
+}
+
+.action-list, .drama-list, .thriller-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .action-title, .drama-title, .thriller-title {
+        color: $g-white;
+        font: 20px $roboto;
+    }
+}
