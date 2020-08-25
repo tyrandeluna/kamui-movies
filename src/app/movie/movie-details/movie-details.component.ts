@@ -14,6 +14,7 @@ export class MovieDetailsComponent implements OnInit {
   year: string
   duration: string
   synopsis: string
+  rates = []
   rate: string
 
   constructor(private route: ActivatedRoute, private mService: MoviesService) { }
@@ -37,9 +38,9 @@ export class MovieDetailsComponent implements OnInit {
 
     //set the rate of the movie
     this.mService.getRate(this.route.snapshot.params['id']).subscribe(data => {
-      if(data.results.iso_3166_1 === 'US') {
-        this.rate = data.results.release_dates[0].certification
-      } 
+      this.rates = data.results
+      console.log(this.rate)
+      this.findRate()
     })
 
     //set the cast
@@ -54,6 +55,17 @@ export class MovieDetailsComponent implements OnInit {
     let splitedDate = date.split('-')
     this.year = splitedDate[0]
 
+  }
+
+  findRate() {
+    for (let result of this.rates) {
+      if(result.iso_3166_1 === "US"){
+        let release = result.release_dates
+        this.rate = release[0].certification
+        console.log(this.rate)
+        return false
+      }
+    }
   }
 
   //convert minutes to hours
