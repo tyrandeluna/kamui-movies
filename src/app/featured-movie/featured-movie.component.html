@@ -22,7 +22,7 @@
                 WATCH
             </button>
             
-            <i class="fa fa-plus" aria-hidden="true"></i>
+            <a *ngIf="featuredMovie" routerLink="/movie-details/{{featuredMovie.id}}" class="fa fa-plus more-details" aria-hidden="true"></a>
         </div>
     </div>
 </div>

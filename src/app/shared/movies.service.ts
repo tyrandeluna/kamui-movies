@@ -13,12 +13,32 @@ export class MoviesService {
         this.url = 'https://api.themoviedb.org/3/movie/'
     }
     
-    getPopular(): Observable<any>{
+    getMovie(id: number): Observable<any> {
+        return this.http.get(`${this.url}${id}?api_key=${this.appKey}`)
+    }
+
+    // featuredMovie(id: number): Observable<any> {
+    //     return this.http.get(`${this.url}${id}?api_key=${this.appKey}`)
+    // }
+
+    //Released movies
+    getReleases(): Observable<any>{
         return this.http.get(`${this.url}popular?api_key=${this.appKey}&language=en-US&page=1`)
     }
 
-    featuredMovie(id: number): Observable<any> {
-        return this.http.get(`${this.url}${id}?api_key=${this.appKey}`)
+    //Rising movies
+    getRising(): Observable<any>{
+        return this.http.get(`${this.url}top_rated?api_key=${this.appKey}&language=en-US&page=1`)
+    }
+
+    //get the certification of the movie (R, PG, PG-13 etc)
+    getRate(id: number): Observable<any>{
+        return this.http.get(`${this.url}${id}/release_dates?api_key=${this.appKey}`)
+    }
+
+    //get main actors and director
+    getCast(id: number): Observable<any>{
+        return this.http.get(`${this.url}${id}/credits?api_key=${this.appKey}`)
     }
 
     // just to find movies

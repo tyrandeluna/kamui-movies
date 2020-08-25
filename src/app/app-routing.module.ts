@@ -10,10 +10,10 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'movie-details', component: MovieDetailsComponent },
   { path: 'favorites', component: FavoritesComponent },
   { path: 'login', component: LoginComponent},
   { path: 'categories', component: AllCategoriesComponent},
+  { path: 'movie-details/:id', component: MovieDetailsComponent },
 ];
 
 @NgModule({

@@ -16,7 +16,7 @@ export class FeaturedMovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mService.featuredMovie(458156).subscribe(res => {
+    this.mService.getMovie(458156).subscribe(res => {
       this.featuredMovie = res
       console.log(this.featuredMovie)
       this.changeTitle()
