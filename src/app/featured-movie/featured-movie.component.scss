@@ -62,5 +62,9 @@
         font: 15px $roboto;
         font-weight: 200;
         justify-content: flex-start;
+
+        .separators {
+            margin: 0 4px 0 4px;
+        }
     }
 }

@@ -1,10 +1,16 @@
 <div class="featured-container">
     <div class="featured-details">
         <div class="featured-data">
-            <h3 class="featured-title">John Wick Parabellum</h3>
+            <h3 class="featured-title">{{ title }}</h3>
 
-            <div class="featured-category">
-                Action • Crime • Thriller
+            <!-- iterating genres and separators -->
+            <div class="featured-category" *ngIf="featuredMovie">
+                <span *ngFor="let genre of genres; index as i">
+                    {{ genres[i].name }}
+
+                    <!-- prevents a lonely dot in the end -->
+                    <span class="separators" *ngIf="i != genres.length - 1"> • </span>
+                </span>
             </div>
         </div>
 
