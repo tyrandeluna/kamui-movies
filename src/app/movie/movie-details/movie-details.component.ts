@@ -19,6 +19,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
   genres = []
   movie: any
   rate: string
+  rateColor: string
   rates = []
   synopsis: string
   title: string
@@ -55,7 +56,9 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
     //set the rate of the movie
     this.subRate = this.mService.getRate(this.route.snapshot.params['id']).subscribe(data => {
       this.rates = data.results
+      console.log(this.rates)
       this.rate = this.mDetailService.findRate(this.rates)
+      this.rateColor = this.mDetailService.colorRate(this.rate)
     })
 
     //set the cast and direction
