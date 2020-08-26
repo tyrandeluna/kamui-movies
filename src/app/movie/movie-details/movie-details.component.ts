@@ -10,14 +10,14 @@ import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
-  movie: any
-  title: string
-  genres = []
-  year: string
   duration: string
-  synopsis: string
-  rates = []
+  genres = []
+  movie: any
   rate: string
+  rates = []
+  synopsis: string
+  title: string
+  year: string
 
   constructor(private route: ActivatedRoute, private mService: MoviesService,
               private mDetailService: MoviesDetailsService) { }
@@ -25,6 +25,7 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.mService.getMovie(this.route.snapshot.params['id']).subscribe(response => {
       this.movie = response
+      console.log(this.movie)
 
       //change the title again, because...  aesthetics >:(
       if(this.movie.id === 458156) {
@@ -33,9 +34,10 @@ export class MovieDetailsComponent implements OnInit {
         this.title = splitedTitle[0] + splitedTitle[2]
       }
 
+      this.duration = this.mDetailService.formatRuntime(this.movie.runtime)
       this.genres = this.movie.genres
       this.year = this.mDetailService.getYear(this.movie.release_date)
-      this.duration = this.mDetailService.formatRuntime(this.movie.runtime)
+      this.synopsis = this.movie.overview
     })
 
     //set the rate of the movie
