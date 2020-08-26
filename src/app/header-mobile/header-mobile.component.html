@@ -1,10 +1,10 @@
 <header class="header-mobile">
     <div class="logo-title">
         <!-- not appears in movie detail page -->
-        <img src="../../assets/headers/logo-icon.svg" *ngIf="route.url != '/movie-details'" alt="Kamui Movies Icon">
+        <img src="../../assets/headers/logo-icon.svg" *ngIf="!route.url.includes('movie-details')" alt="Kamui Movies Icon">
 
         <!-- only appears in movie detail page -->
-        <a routerLink="../" class="fa fa-arrow-left" aria-hidden="true" *ngIf="route.url == '/movie-details'"></a>
+        <a routerLink=".." class="fa fa-arrow-left" aria-hidden="true" *ngIf="route.url.includes('movie-details')"></a>
 
         <!-- only appears in your respective page -->
         <h2 class="title-page" *ngIf="route.url == '/favorites'">My Favorites</h2>
