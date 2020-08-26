@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/shared/movies.service';
+import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
+
 
 @Component({
   selector: 'app-movie-details',
@@ -17,12 +19,12 @@ export class MovieDetailsComponent implements OnInit {
   rates = []
   rate: string
 
-  constructor(private route: ActivatedRoute, private mService: MoviesService) { }
+  constructor(private route: ActivatedRoute, private mService: MoviesService,
+              private mDetailService: MoviesDetailsService) { }
 
   ngOnInit(): void {
     this.mService.getMovie(this.route.snapshot.params['id']).subscribe(response => {
       this.movie = response
-      console.log(this.movie)
 
       //change the title again, because...  aesthetics >:(
       if(this.movie.id === 458156) {
@@ -32,15 +34,14 @@ export class MovieDetailsComponent implements OnInit {
       }
 
       this.genres = this.movie.genres
-      this.getYear()
-      this.formatRuntime()
+      this.year = this.mDetailService.getYear(this.movie.release_date)
+      this.duration = this.mDetailService.formatRuntime(this.movie.runtime)
     })
 
     //set the rate of the movie
     this.mService.getRate(this.route.snapshot.params['id']).subscribe(data => {
       this.rates = data.results
-      console.log(this.rate)
-      this.findRate()
+      this.rate = this.mDetailService.findRate(this.rates)
     })
 
     //set the cast
@@ -48,40 +49,6 @@ export class MovieDetailsComponent implements OnInit {
       console.log(data)
     })
     
-  }
-
-  getYear() {
-    let date: string = this.movie.release_date
-    let splitedDate = date.split('-')
-    this.year = splitedDate[0]
-
-  }
-
-  findRate() {
-    for (let result of this.rates) {
-      if(result.iso_3166_1 === "US"){
-        let release = result.release_dates
-        this.rate = release[0].certification
-        console.log(this.rate)
-        return false
-      }
-    }
-  }
-
-  //convert minutes to hours
-  formatRuntime() {
-    let movireRunTime = this.movie.runtime
-    if(movireRunTime > 59) {
-      if(movireRunTime > 60) {
-        let hoursToMin = Math.floor(movireRunTime / 60)
-        let minCalc = movireRunTime % 60 
-        this.duration = hoursToMin + 'h' + minCalc + 'min'
-      } else {
-        this.duration = '1h'
-      }
-    } else {
-      this.duration = movireRunTime + 'min'
-    }
   }
 
 }
