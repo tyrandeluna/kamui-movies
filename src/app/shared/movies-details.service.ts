@@ -8,7 +8,14 @@ export class MoviesDetailsService {
         for (let rate of rates) {
             if(rate.iso_3166_1 === "US"){
                 let release = rate.release_dates
-                return release[0].certification
+                
+                if(release[0].certification != "") {
+                    return release[0].certification
+                } else {
+                    return "NR"
+                }
+            } else {
+                return "NR"
             }
         }
     }
