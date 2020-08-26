@@ -8,8 +8,7 @@ export class MoviesDetailsService {
         for (let i = 0; i < rates.length; i++) {
             if(rates[i].iso_3166_1 === "US"){
                 let release = rates[i].release_dates
-                console.log('Entrou aqui')
-                
+        
                 if(release[0].certification != "") {
                     return release[0].certification
                 } else if(release[0].certification == "") {
@@ -18,7 +17,6 @@ export class MoviesDetailsService {
                         if(cert.certification != "") {
                             return cert.certification
                         } else {
-                            console.log("caiu aqui")
                             return "NR"
                         }
                     }
