@@ -7,8 +7,9 @@
             <app-movie-tile 
                 *ngFor="let movieEl of releasedMovies"
                 [movie]="movieEl"
-                [id]="movieEl.id"
                 [coverPath]="movieEl.poster_path"
+
+                routerLink="/movie-details/{{movieEl.id}}"
             >
             </app-movie-tile>
         </div>
@@ -17,8 +18,16 @@
     <section class="rising-list">
         <h3 class="rising-title">Rising</h3>
 
-        <div class="movie-tiles" *ngIf="releasedMovies">
-            <app-movie-tile></app-movie-tile>
+        <div class="movie-tiles" *ngIf="risingMovies">
+            <app-movie-tile 
+                *ngFor="let movieEl of risingMovies"
+                [movie]="movieEl"
+                [id]="movieEl.id"
+                [coverPath]="movieEl.poster_path"
+
+                routerLink="/movie-details/{{movieEl.id}}"
+            >
+            </app-movie-tile>
         </div>
     </section>
 </div>

@@ -40,6 +40,8 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
         let titleM: string = this.movie.title
         let splitedTitle = titleM.split(/:|-/)
         this.title = splitedTitle[0] + splitedTitle[2]
+      } else {
+        this.title = this.movie.title
       }
 
       this.cover = this.mService.getImagePath() + this.movie.poster_path

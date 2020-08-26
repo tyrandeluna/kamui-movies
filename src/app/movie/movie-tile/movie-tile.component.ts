@@ -8,7 +8,6 @@ import { MoviesService } from 'src/app/shared/movies.service';
 })
 export class MovieTileComponent implements OnInit {
   @Input() movie: any
-  @Input() movieID: number
   @Input() coverPath: string
   cover: string
 

@@ -9,7 +9,9 @@ import { Subscription } from 'rxjs';
 })
 export class MovieComponent implements OnInit, OnDestroy {
   releasedMovies = []
+  risingMovies = []
   subRelease: Subscription
+  subRising: Subscription
 
   constructor(private mService: MoviesService) { }
 
@@ -17,6 +19,11 @@ export class MovieComponent implements OnInit, OnDestroy {
     this.subRelease = this.mService.getReleases().subscribe(response => {
       this.releasedMovies = response.results
     });
+
+    this.subRising = this.mService.getRising().subscribe(response => {
+      this.risingMovies = response.results
+      console.log(this.risingMovies)
+    })
   }
 
   ngOnDestroy() {
