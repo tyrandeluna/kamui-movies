@@ -11,6 +11,7 @@ import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
 })
 export class MovieDetailsComponent implements OnInit {
   cast = []
+  direction: string
   duration: string
   genres = []
   movie: any
@@ -47,9 +48,10 @@ export class MovieDetailsComponent implements OnInit {
       this.rate = this.mDetailService.findRate(this.rates)
     })
 
-    //set the cast
+    //set the cast and direction
     this.mService.getCast(this.route.snapshot.params['id']).subscribe(data => {
       this.cast = data.cast.slice(0,3)
+      this.direction = this.mDetailService.getDirector(data.crew)
     })
     
   }

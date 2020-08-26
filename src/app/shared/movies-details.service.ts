@@ -30,6 +30,14 @@ export class MoviesDetailsService {
         }
     }
 
+    getDirector(crew = []): string {
+        for (let person of crew) {
+            if(person.job === "Director"){
+                return person.name
+            }
+        }
+    }
+
     getYear(date: string): string {
         let splitedDate = date.split('-')
         return splitedDate[0]
