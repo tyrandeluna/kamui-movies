@@ -7,19 +7,19 @@ import { MoviesService } from '../shared/movies.service';
   styleUrls: ['./featured-movie.component.scss']
 })
 export class FeaturedMovieComponent implements OnInit {
+  backdrop: string
   featuredMovie: any
-  title: string
   genres = []
+  title: string
 
-  constructor(private mService: MoviesService) { 
-    
-  }
+  constructor(private mService: MoviesService) {}
 
   ngOnInit(): void {
     this.mService.getMovie(458156).subscribe(res => {
       this.featuredMovie = res
       this.changeTitle()
       this.genres = this.featuredMovie.genres
+      this.backdrop = this.mService.getImagePath() + this.featuredMovie.backdrop_path
     });
     
   }

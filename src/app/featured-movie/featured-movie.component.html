@@ -1,4 +1,9 @@
-<div class="featured-container">
+<!-- sets the featured movie imagem by property biding -->
+<div class="featured-container" 
+    [ngStyle]="{ 
+    'background': 'linear-gradient(0deg, #0A080C 0.06%, rgba(0, 0, 0, 0) 18.53%), 
+    url(' + backdrop + ') 50%/180% no-repeat'}">
+
     <div class="featured-details">
         <div class="featured-data">
             <h3 class="featured-title">{{ title }}</h3>

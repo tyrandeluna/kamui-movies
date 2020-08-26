@@ -6,11 +6,17 @@ import { Observable } from 'rxjs';
 export class MoviesService {
     url: string
     appKey: string
+    imagePath: string
     
 
     constructor(private http: HttpClient) {
         this.appKey = '67e33bb0e14d5e58469dc1d239a91793'
         this.url = 'https://api.themoviedb.org/3/movie/'
+        this.imagePath = 'http://image.tmdb.org/t/p/original'
+    }
+    
+    getImagePath(): string {
+        return this.imagePath
     }
     
     getMovie(id: number): Observable<any> {

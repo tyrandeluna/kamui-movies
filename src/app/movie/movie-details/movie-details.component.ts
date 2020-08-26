@@ -16,7 +16,6 @@ export class MovieDetailsComponent implements OnInit {
   direction: string
   duration: string
   genres = []
-  imagePath: string
   movie: any
   rate: string
   rates = []
@@ -25,14 +24,11 @@ export class MovieDetailsComponent implements OnInit {
   year: string
 
   constructor(private route: ActivatedRoute, private mService: MoviesService,
-              private mDetailService: MoviesDetailsService) { 
-                this.imagePath = 'http://image.tmdb.org/t/p/original'
-              }
+              private mDetailService: MoviesDetailsService) {}
 
   ngOnInit(): void {
     this.mService.getMovie(this.route.snapshot.params['id']).subscribe(response => {
       this.movie = response
-      console.log(this.movie)
 
       //change the title again, because...  aesthetics >:(
       if(this.movie.id === 458156) {
@@ -41,8 +37,8 @@ export class MovieDetailsComponent implements OnInit {
         this.title = splitedTitle[0] + splitedTitle[2]
       }
 
-      this.cover = this.imagePath + this.movie.poster_path
-      this.backdrop = this.imagePath + this.movie.backdrop_path
+      this.cover = this.mService.getImagePath() + this.movie.poster_path
+      this.backdrop = this.mService.getImagePath() + this.movie.backdrop_path
       this.duration = this.mDetailService.formatRuntime(this.movie.runtime)
       this.genres = this.movie.genres
       this.synopsis = this.movie.overview
