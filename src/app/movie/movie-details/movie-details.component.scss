@@ -96,11 +96,13 @@
     flex-direction: column;
     font-family: $roboto;
     margin-top: 10px;
+    text-align: center;
     width: 100%;
 
     .info {
         font-weight: 200;
         font-size: 15px;
+        width: 100%;
         word-spacing: 2px;
     }
 
