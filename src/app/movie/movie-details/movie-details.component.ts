@@ -10,6 +10,7 @@ import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
   styleUrls: ['./movie-details.component.scss']
 })
 export class MovieDetailsComponent implements OnInit {
+  cast = []
   duration: string
   genres = []
   movie: any
@@ -48,7 +49,7 @@ export class MovieDetailsComponent implements OnInit {
 
     //set the cast
     this.mService.getCast(this.route.snapshot.params['id']).subscribe(data => {
-      console.log(data)
+      this.cast = data.cast.slice(0,3)
     })
     
   }

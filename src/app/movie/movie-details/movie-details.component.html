@@ -39,7 +39,11 @@
             </p>
         
             <p class="cast">
-                Cast: Keanu Reeves, Halle Berry, Jason Mantzoukas
+                Cast: 
+                <span *ngFor="let actor of cast; index as i">
+                    {{ actor.name }}
+                    <span *ngIf="i != cast.length - 1">, </span>
+                </span>
             </p>
             <p class="direction">
                 Direction: Chad Stahelski
