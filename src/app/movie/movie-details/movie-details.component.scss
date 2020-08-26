@@ -27,9 +27,9 @@
 }
 
 .blur-banner {
-    background: linear-gradient(0deg, $rich-black 0.06%, rgba(0, 0, 0, 0) 18.53%), url(../../../assets/movies/john-wick-3.png);
+    //background: linear-gradient(0deg, $rich-black 0.06%, rgba(0, 0, 0, 0) 18.53%), url(../../../assets/movies/john-wick-3.png);
     background-repeat: no-repeat;
-    background-size: 110%;
+    background-size: 100%;
     background-position: 40% 40%;
     display: flex;
     filter: blur(4px);
@@ -51,7 +51,7 @@
 } 
 
 .movie-cover {
-    background: url(../../../assets/movies/john-wick-3.png);
+    //background: url(../../../assets/movies/john-wick-3.png);
     background-repeat: no-repeat;
     background-size: 110%;
     background-position: 40% 40%;

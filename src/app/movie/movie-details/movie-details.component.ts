@@ -11,9 +11,12 @@ import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
 })
 export class MovieDetailsComponent implements OnInit {
   cast = []
+  cover: string
+  backdrop: string
   direction: string
   duration: string
   genres = []
+  imagePath: string
   movie: any
   rate: string
   rates = []
@@ -22,7 +25,9 @@ export class MovieDetailsComponent implements OnInit {
   year: string
 
   constructor(private route: ActivatedRoute, private mService: MoviesService,
-              private mDetailService: MoviesDetailsService) { }
+              private mDetailService: MoviesDetailsService) { 
+                this.imagePath = 'http://image.tmdb.org/t/p/original'
+              }
 
   ngOnInit(): void {
     this.mService.getMovie(this.route.snapshot.params['id']).subscribe(response => {
@@ -36,10 +41,12 @@ export class MovieDetailsComponent implements OnInit {
         this.title = splitedTitle[0] + splitedTitle[2]
       }
 
+      this.cover = this.imagePath + this.movie.poster_path
+      this.backdrop = this.imagePath + this.movie.backdrop_path
       this.duration = this.mDetailService.formatRuntime(this.movie.runtime)
       this.genres = this.movie.genres
-      this.year = this.mDetailService.getYear(this.movie.release_date)
       this.synopsis = this.movie.overview
+      this.year = this.mDetailService.getYear(this.movie.release_date)
     })
 
     //set the rate of the movie
