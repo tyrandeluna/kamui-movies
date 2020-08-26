@@ -1,7 +1,7 @@
 <header class="header-mobile">
     <div class="logo-title">
         <!-- not appears in movie detail page -->
-        <img src="../../assets/headers/logo-icon.svg" *ngIf="!route.url.includes('movie-details')" alt="Kamui Movies Icon">
+        <img routerLink="/" src="../../assets/headers/logo-icon.svg" *ngIf="!route.url.includes('movie-details')" alt="Kamui Movies Icon">
 
         <!-- only appears in movie detail page -->
         <a routerLink=".." class="fa fa-arrow-left" aria-hidden="true" *ngIf="route.url.includes('movie-details')"></a>

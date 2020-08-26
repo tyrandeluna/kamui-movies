@@ -28,6 +28,7 @@ export class MoviesDetailsService {
         }
     }
 
+    //choose the color based on the rate
     colorRate(rate: string): string {
         if(rate === "G") {
             return "#5C9C3E"

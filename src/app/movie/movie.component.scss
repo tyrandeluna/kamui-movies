@@ -10,11 +10,16 @@
 .movie-tiles {
     display: flex;
     padding: 10px 0px;
+    overflow-x: auto;
     width: 100%;
 
     //left margin of the second element onwards
     app-movie-tile:nth-child(n + 2) {
         margin-left: 18px;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 }
 
