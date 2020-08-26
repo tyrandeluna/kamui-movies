@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesService } from 'src/app/shared/movies.service';
 import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.scss']
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit, OnDestroy {
   cast = []
   cover: string
   backdrop: string
@@ -23,11 +24,15 @@ export class MovieDetailsComponent implements OnInit {
   title: string
   year: string
 
+  subMovie: Subscription
+  subRate: Subscription
+  subCast: Subscription
+
   constructor(private route: ActivatedRoute, private mService: MoviesService,
               private mDetailService: MoviesDetailsService) {}
 
   ngOnInit(): void {
-    this.mService.getMovie(this.route.snapshot.params['id']).subscribe(response => {
+    this.subMovie = this.mService.getMovie(this.route.snapshot.params['id']).subscribe(response => {
       this.movie = response
 
       //change the title again, because...  aesthetics >:(
@@ -46,17 +51,23 @@ export class MovieDetailsComponent implements OnInit {
     })
 
     //set the rate of the movie
-    this.mService.getRate(this.route.snapshot.params['id']).subscribe(data => {
+    this.subRate = this.mService.getRate(this.route.snapshot.params['id']).subscribe(data => {
       this.rates = data.results
       this.rate = this.mDetailService.findRate(this.rates)
     })
 
     //set the cast and direction
-    this.mService.getCast(this.route.snapshot.params['id']).subscribe(data => {
+    this.subCast = this.mService.getCast(this.route.snapshot.params['id']).subscribe(data => {
       this.cast = data.cast.slice(0,3)
       this.direction = this.mDetailService.getDirector(data.crew)
     })
     
+  }
+
+  ngOnDestroy() {
+    this.subMovie.unsubscribe()
+    this.subRate.unsubscribe()
+    this.subCast.unsubscribe()
   }
 
 }
