@@ -20,4 +20,4 @@ import { AllCategoriesComponent } from './all-categories.component';
         AllCategoriesComponent
     ]
 })
-export class CategoriesModule {}
+export class AllCategoriesModule {}

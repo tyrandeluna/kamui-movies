@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'favorites', loadChildren: './favorites/favorites.module#FavoritesModule'},
   { path: 'login', loadChildren: './login/login.module#LoginModule'},
+  { path: 'categories', loadChildren: './all-categories/categories.module#AllCategoriesModule'},
   { path: 'movie-details/:id', loadChildren: './movie/movie.module#MovieModule'},
 ];
 

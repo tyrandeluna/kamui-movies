@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MovieModule } from './movie/movie.module';
 import { LoginModule } from './login/login.module';
 import { FavoritesModule } from './favorites/favorites.module';
-import { CategoriesModule } from './all-categories/categories.module';
+import { AllCategoriesModule } from './all-categories/categories.module';
 
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
@@ -26,7 +26,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     MovieModule,
     LoginModule,
     FavoritesModule,
-    CategoriesModule,
+    AllCategoriesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
