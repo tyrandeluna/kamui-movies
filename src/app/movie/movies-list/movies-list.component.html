@@ -1,4 +1,4 @@
-<div class="movie-list-container">
+<div class="movie-list-container" *ngIf="categoryList">
     <section class="category-list" *ngFor="let category of categoryList; index as i">
         <h3 class="category-title">{{ category.name }}</h3>
 

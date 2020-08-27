@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MoviesService } from 'src/app/shared/movies.service';
-import { MoviesDetailsService } from 'src/app/shared/movies-details.service';
+import { MoviesService } from 'src/app/movie/movies.service';
+import { MoviesDetailsService } from 'src/app/movie/movies-details.service';
 import { Subscription } from 'rxjs';
 
 

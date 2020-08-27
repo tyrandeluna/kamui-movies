@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MoviesService } from '../shared/movies.service';
+import { MoviesService } from './movies.service';
 import { Subscription } from 'rxjs';
 
 @Component({

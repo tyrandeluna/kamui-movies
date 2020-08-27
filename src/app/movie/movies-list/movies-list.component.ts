@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MoviesService } from 'src/app/shared/movies.service';
+import { MoviesService } from 'src/app/movie/movies.service';
 
 @Component({
   selector: 'app-movies-list',

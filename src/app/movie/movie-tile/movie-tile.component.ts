@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MoviesService } from 'src/app/shared/movies.service';
+import { MoviesService } from 'src/app/movie/movies.service';
 
 @Component({
   selector: 'app-movie-tile',
