@@ -17,11 +17,11 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subRelease = this.mService.getReleases().subscribe(response => {
-      this.releasedMovies = response.results
+      this.releasedMovies = response.results.slice()
     });
 
     this.subRising = this.mService.getRising().subscribe(response => {
-      this.risingMovies = response.results
+      this.risingMovies = response.results.slice()
     })
   }
 

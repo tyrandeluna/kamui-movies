@@ -16,7 +16,7 @@ export class MoviesListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subCategory = this.mService.getGenresMovies().subscribe(response => {
-      this.categoryList = response.genres
+      this.categoryList = response.genres.slice()
       this.getAllMovies()
     })
   }
