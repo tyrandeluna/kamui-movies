@@ -30,4 +30,20 @@
             </app-movie-tile>
         </div>
     </section>
+
+    <section class="category-list" *ngFor="let category of categoryList; index as i">
+        <h3 class="category-title">{{ category.name }}</h3>
+
+        <div class="movie-tiles" *ngIf="allMoviesList">
+            <app-movie-tile 
+                *ngFor="let movieEl of allMoviesList[i]"
+                [movie]="movieEl"
+                [id]="movieEl.id"
+                [coverPath]="movieEl.poster_path"
+
+                routerLink="/movie-details/{{movieEl.id}}"
+            >
+            </app-movie-tile>
+        </div>
+    </section>
 </div>

@@ -18,17 +18,17 @@
         margin-left: 18px;
     }
 
-    &::-webkit-scrollbar {
+    &::-webkit-scrollbar{
         display: none;
     }
 }
 
-.releases-list, .rising-list {
+.releases-list, .rising-list, .category-list {
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    .release-title, .rising-title {
+    .release-title, .rising-title, .category-title {
         color: $g-white;
         font: 20px $roboto;
     }

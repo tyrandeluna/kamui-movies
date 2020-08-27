@@ -10,8 +10,11 @@ import { Subscription } from 'rxjs';
 export class MovieComponent implements OnInit, OnDestroy {
   releasedMovies = []
   risingMovies = []
+  categoryList = []
+  allMoviesList = []
   subRelease: Subscription
   subRising: Subscription
+  subCategory: Subscription
 
   constructor(private mService: MoviesService) { }
 
@@ -22,12 +25,26 @@ export class MovieComponent implements OnInit, OnDestroy {
 
     this.subRising = this.mService.getRising().subscribe(response => {
       this.risingMovies = response.results
-      console.log(this.risingMovies)
+    })
+
+    this.subCategory = this.mService.getGenresMovies().subscribe(response => {
+      this.categoryList = response.genres
+      this.getAllMovies()
     })
   }
 
   ngOnDestroy() {
     this.subRelease.unsubscribe()
+    this.subRising.unsubscribe()
+    this.subCategory.unsubscribe()
+  }
+
+  getAllMovies(){
+    for (let category of this.categoryList) {
+      this.mService.getMoviesByGenre(category.id).subscribe(response => {
+        this.allMoviesList.push(response.results.slice(0, 21))
+      })
+    }
   }
 
 }

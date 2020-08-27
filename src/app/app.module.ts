@@ -31,8 +31,8 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

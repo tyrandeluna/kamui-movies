@@ -47,6 +47,16 @@ export class MoviesService {
         return this.http.get(`${this.url}${id}/credits?api_key=${this.appKey}`)
     }
 
+    //get a list of genres to show in all genres and home page
+    getGenresMovies(): Observable<any>{
+        return this.http.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.appKey}`)
+    }
+
+    //get movie using its genre
+    getMoviesByGenre(genreID: number): Observable<any>{
+        return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=${this.appKey}&with_genres=${genreID}`)
+    }
+
     // just to find movies
     // findMovie(id: string): Observable<any> {
     //     return this.http.get(`https://api.themoviedb.org/3/find/${id}?api_key=${this.appKey}&language=en-US&external_source=imdb_id`)
