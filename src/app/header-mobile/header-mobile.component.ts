@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
 export class HeaderMobileComponent implements OnInit {
   route: Router
 
-  constructor(router: Router) {
+  constructor(router: Router, private location: Location) {
     this.route = router
   }
 
   ngOnInit(): void {
   }
 
+  goBack() {
+    this.location.back()
+  }
 }

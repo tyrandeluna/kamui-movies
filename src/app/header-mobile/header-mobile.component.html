@@ -4,7 +4,7 @@
         <img routerLink="/" src="../../assets/headers/logo-icon.svg" *ngIf="!route.url.includes('movie-details')" alt="Kamui Movies Icon">
 
         <!-- only appears in movie detail page -->
-        <a routerLink=".." class="fa fa-arrow-left" aria-hidden="true" *ngIf="route.url.includes('movie-details')"></a>
+        <i (click)="goBack()" class="fa fa-arrow-left" aria-hidden="true" *ngIf="route.url.includes('movie-details')"></i>
 
         <!-- only appears in your respective page -->
         <h2 class="title-page" *ngIf="route.url == '/favorites'">My Favorites</h2>
