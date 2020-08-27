@@ -28,7 +28,7 @@ export class MoviesListComponent implements OnInit, OnDestroy {
     })
   }
   
-  //show the first 3 categories
+  //show the firsty 3 lines
   loadMovies() {
     if(this.categoryList = []) {
       this.subCategory = this.mService.getGenresMovies().subscribe(response => {
@@ -47,7 +47,7 @@ export class MoviesListComponent implements OnInit, OnDestroy {
     this.subCategory.unsubscribe()
   }
 
-  //knows when the user scroll to bottom
+  //knows when the user scroll to bottom and load more buttons
   @HostListener("window:scroll", ['$event'])
   onWindowScroll(){
     if(this.loadedLines < this.categoryList.length) {
