@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 
+import { FeaturedMovieComponent } from '../featured-movie/featured-movie.component';
 import { MovieComponent } from './movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieTileComponent } from './movie-tile/movie-tile.component';
@@ -9,6 +10,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
+        FeaturedMovieComponent,
         MovieComponent,
         MovieDetailsComponent,
         MovieTileComponent,
@@ -19,6 +21,7 @@ import { CommonModule } from '@angular/common';
         CommonModule
     ],
     exports: [
+        FeaturedMovieComponent,
         MovieComponent,
         MovieDetailsComponent,
         MovieTileComponent,
