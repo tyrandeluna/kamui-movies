@@ -4,10 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieModule } from './movie/movie.module';
+import { LoginModule } from './login/login.module';
 
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
-import { LoginComponent } from './login/login.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
@@ -17,7 +17,6 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
     AppComponent,
     MobileMenuComponent,
     HeaderMobileComponent,
-    LoginComponent,
     FavoritesComponent,
     HomePageComponent,
     AllCategoriesComponent,
@@ -26,7 +25,8 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    MovieModule
+    MovieModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
