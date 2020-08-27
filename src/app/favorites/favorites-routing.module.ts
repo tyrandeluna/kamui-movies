@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FavoritesComponent } from './favorites.component';
 
 const routes: Routes = [
-  { path: 'favorites', component: FavoritesComponent }
+  { path: '', component: FavoritesComponent }
 ];
 
 @NgModule({
