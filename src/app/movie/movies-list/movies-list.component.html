@@ -1,5 +1,5 @@
 <div class="movie-list-container" *ngIf="categoryList">
-    <section class="category-list" *ngFor="let category of categoryList; index as i">
+    <section class="category-list" *ngFor="let category of categoryLoad; index as i">
         <h3 class="category-title">{{ category.name }}</h3>
 
         <div class="movie-tiles" *ngIf="allMoviesList">
