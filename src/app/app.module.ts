@@ -14,6 +14,7 @@ import { MovieTileComponent } from './movie/movie-tile/movie-tile.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
+import { MoviesListComponent } from './movie/movies-list/movies-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
     MovieTileComponent,
     FavoritesComponent,
     HomePageComponent,
-    AllCategoriesComponent
+    AllCategoriesComponent,
+    MoviesListComponent
   ],
   imports: [
     BrowserModule,

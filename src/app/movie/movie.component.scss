@@ -23,12 +23,12 @@
     }
 }
 
-.releases-list, .rising-list, .category-list {
+.releases-list, .rising-list {
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    .release-title, .rising-title, .category-title {
+    .release-title, .rising-title {
         color: $g-white;
         font: 20px $roboto;
     }
