@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MovieRoutingModule } from './movie-routing.module';
 
 import { FeaturedMovieComponent } from '../featured-movie/featured-movie.component';
 import { MovieComponent } from './movie.component';
@@ -18,12 +19,12 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
     ], 
     imports: [
         RouterModule,
-        CommonModule
+        MovieRoutingModule,
+        CommonModule,
     ],
     exports: [
         FeaturedMovieComponent,
         MovieComponent,
-        MovieDetailsComponent,
         MovieTileComponent,
         MoviesListComponent,
     ]
