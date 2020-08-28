@@ -1,9 +1,12 @@
-<div class="favorite-list">
+<div class="favorite-list" *ngIf="favorites">
     <!-- static programming for a while -->
-    <app-movie-tile></app-movie-tile>
-    <app-movie-tile></app-movie-tile>
-    <app-movie-tile></app-movie-tile>
-    <app-movie-tile></app-movie-tile>
-    <app-movie-tile></app-movie-tile>
-    <app-movie-tile></app-movie-tile>
+    <app-movie-tile 
+                *ngFor="let favoriteEl of favorites"
+                [movie]="favoriteEl"
+                [id]="favoriteEl.id"
+                [coverPath]="favoriteEl.poster_path"
+
+                routerLink="/movie-details/{{favoriteEl.id}}"
+    >
+    </app-movie-tile>
 </div>

@@ -10,8 +10,6 @@ export class FavoriteMovieService {
  
     addToFavorites(movie: any) {
         this.favoritesMovies.push(movie)
-        console.log(this.favoritesMovies)
-        localStorage.setItem("favoritedMovies", this.favoritesMovies)
     }
 
     removeFavorite(id: number) {
@@ -19,8 +17,6 @@ export class FavoriteMovieService {
             for(let i = 0; i < this.favoritesMovies.length; i++) {
                 if(this.favoritesMovies[i].id === id) {
                     this.favoritesMovies.splice(i, 1)
-                    console.log("removed!")
-                    console.log(this.favoritesMovies)
                 }
             }
         }
@@ -32,5 +28,13 @@ export class FavoriteMovieService {
         } else {
             return false
         }
+    }
+
+    returnFavorite(index: number) {
+        return this.favoritesMovies[index]
+    }
+
+    numberOfFavorites() {
+        return this.favoritesMovies.length
     }
 }
