@@ -7,6 +7,7 @@ import { MovieModule } from './movie/movie.module';
 import { LoginModule } from './login/login.module';
 import { FavoritesModule } from './favorites/favorites.module';
 import { AllCategoriesModule } from './all-categories/categories.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
@@ -27,6 +28,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     LoginModule,
     FavoritesModule,
     AllCategoriesModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

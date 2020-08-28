@@ -20,7 +20,7 @@
         </div>
 
         <div class="action-buttons">
-            <i (click)="toFavorite()" class={{heartClass[0]}} aria-hidden="true"></i>
+            <i [@favorite]="animationState" (click)="toFavorite()" class={{heartClass[0]}} aria-hidden="true"></i>
 
             <button class="watch-button">
                 <i class="fa fa-play" aria-hidden="true"></i>
