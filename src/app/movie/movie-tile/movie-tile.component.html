@@ -1,4 +1,4 @@
 <div *ngIf="movie" class="movie-tile" [ngStyle]="{'background': 'url('+ cover +')  0px 0px/100% no-repeat'}">
-    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <app-favorite-button [movie]="movie"></app-favorite-button>
 </div>
  

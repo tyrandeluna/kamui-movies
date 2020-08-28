@@ -13,12 +13,13 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MobileMenuComponent,
     HeaderMobileComponent,
-    HomePageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
