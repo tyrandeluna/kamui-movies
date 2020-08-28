@@ -20,7 +20,10 @@
         height: 26px;
     }
 
-    .watch-button, .fa-heart-o {
+    .fa-heart { 
+        color: $main-purple;
+    }
+    .fa-heart-o, .fa-heart, .watch-button {
         margin-right: 10px;
     }
 
