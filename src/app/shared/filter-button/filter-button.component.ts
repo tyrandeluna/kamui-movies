@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-button',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-button.component.scss']
 })
 export class FilterButtonComponent implements OnInit {
+  route: Router
 
-  constructor() { }
+  constructor(router: Router) {
+    this.route = router
+  }
 
   ngOnInit(): void {
   }

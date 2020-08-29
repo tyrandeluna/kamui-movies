@@ -1,1 +1,2 @@
-<p>filter-button works!</p>
+<!-- only appears in favorites and all categories page -->
+<button class="filter" *ngIf="route.url == '/favorites' || route.url == '/categories'"><i class="fa fa-sliders" aria-hidden="true"></i></button>
