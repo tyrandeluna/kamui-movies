@@ -44,8 +44,7 @@
     display: flex;
     flex-direction: column;
     font-size: 18px;
-    //padding: 10px 0 0 10px;
-    overflow: hidden;
+    overflow-y: auto;
     transform-origin: top center;
     width: 100%;
 

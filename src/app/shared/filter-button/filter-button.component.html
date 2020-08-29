@@ -15,9 +15,7 @@
     <section class="filter-type" (click)="onToggleGenre()">Genre <i class="fa fa-plus" aria-hidden="true"></i></section>
         <div class="genres-list" [@toggleGenre]="genreState">
             <div class="genres">
-                <a>Teste</a>
-                <a>Teste</a>
-                <a>Teste</a>
+                <a *ngFor="let genre of allGenres">{{ genre.name }}</a>
             </div>
         </div>
 </div>
