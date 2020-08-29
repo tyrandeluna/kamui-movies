@@ -1,2 +1,23 @@
 <!-- only appears in favorites and all categories page -->
-<button class="filter" *ngIf="route.url == '/favorites' || route.url == '/categories'"><i class="fa fa-sliders" aria-hidden="true"></i></button>
+<button 
+    class="filter" 
+    *ngIf="route.url == '/favorites' || route.url == '/categories'"
+    (click)="onToggle()"
+    >
+    <i class="fa fa-sliders" aria-hidden="true"></i>
+
+</button>
+
+<div class="filter-menu" [@toggle]="animationState">
+    <h2>Filter by:</h2>
+
+    <!-- toggle the div below the section -->
+    <section class="filter-type" (click)="onToggleGenre()">Genre <i class="fa fa-plus" aria-hidden="true"></i></section>
+        <div class="genres-list" [@toggleGenre]="genreState">
+            <div class="genres">
+                <a>Teste</a>
+                <a>Teste</a>
+                <a>Teste</a>
+            </div>
+        </div>
+</div>

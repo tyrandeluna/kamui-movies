@@ -11,3 +11,55 @@
     height: 34px;
     width: 34px;
 }
+
+.filter-menu {
+    background: $main-purple;
+    border-radius: 5px;
+    color: $g-white;
+    display: none;
+    filter: drop-shadow(2px 2px 0px $persian-indigo);
+    flex-direction: column;
+    font-family: $roboto;
+    margin: 10px 0 0 0;
+    position: absolute;
+    right: 10px;
+    transform-origin: top right;
+    width: 60%;
+}
+
+.filter-type {
+    align-items: center;
+    background: darken($main-purple, 5%);
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+.genres-list {
+    background: darken($main-purple, 10%);
+    color: lighten($main-purple, 30%);
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    //padding: 10px 0 0 10px;
+    overflow: hidden;
+    transform-origin: top center;
+    width: 100%;
+
+    a {
+        margin: 0 0 10px 0;
+    }
+
+    .genres {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0 0 10px;
+    }
+}
+
+h2 {
+    margin: 10px 0 0 10px;
+}
