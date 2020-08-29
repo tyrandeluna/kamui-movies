@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { FilterButtonComponent } from './shared/filter-button/filter-button.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     MobileMenuComponent,
     HeaderMobileComponent,
-    HomePageComponent
+    HomePageComponent,
+    FilterButtonComponent
   ],
   imports: [
     BrowserModule,

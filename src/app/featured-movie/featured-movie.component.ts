@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { MoviesService } from '../movie/movies.service';
 import { Subscription } from 'rxjs';
-import { FavoriteMovieService } from '../movie/favorite-movie.service';
+import { FavoriteMovieService } from '../shared/favorite-button/favorite-movie.service';
 
 @Component({
   selector: 'app-featured-movie',

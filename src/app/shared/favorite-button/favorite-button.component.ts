@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { trigger, style, transition, animate } from '@angular/animations';
 
-import { FavoriteMovieService } from '../../movie/favorite-movie.service';
+import { FavoriteMovieService } from './favorite-movie.service';
 
 @Component({
   selector: 'app-favorite-button',
@@ -33,25 +33,21 @@ import { FavoriteMovieService } from '../../movie/favorite-movie.service';
 })
 export class FavoriteButtonComponent implements OnInit, OnChanges {
   animationState
-  @Output() favoriteCanged = new EventEmitter<boolean>();
   heartClass: string[]
   @Input() isFavorite: boolean
   @Input() movie
-  favoritedMovie
 
   constructor(private favoriteService: FavoriteMovieService) { 
     this.animationState = 'normal'
     this.isFavorite = false
     this.heartClass = ['fa fa-heart-o'];
     this.movie = []
-    // this.favoritedMovie = [this.isFavorite, this.movie]
   }
 
   ngOnChanges() {
     if(this.movie) {
       this.isFavorite = this.favoriteService.isFavorite(this.movie.id)
       this.heartClass = this.isFavorite ? ['fa fa-heart'] : ['fa fa-heart-o']
-      console.log(this.isFavorite)
     }
   }
 
@@ -66,7 +62,6 @@ export class FavoriteButtonComponent implements OnInit, OnChanges {
     if(this.isFavorite === false) {
       this.isFavorite = true
       this.favoriteService.addToFavorites(this.movie)
-      this.favoriteCanged.emit(this.isFavorite)
       this.heartClass = this.isFavorite ? ['fa fa-heart'] : ['fa fa-heart-o']
     } else {
       this.favoriteService.removeFavorite(this.movie.id)
