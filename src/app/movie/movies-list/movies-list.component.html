@@ -1,6 +1,6 @@
 <div class="movie-list-container" *ngIf="categoryList" > 
     <section class="category-list" *ngFor="let category of categoryLoad; index as i">
-        <div class="verify-filter" *ngIf="category.name == selectedGenre || selectedGenre == ''">
+        <div class="verify-filter" *ngIf="category.id == selectedGenre || selectedGenre == 0"> 
             <h3 class="category-title">{{ category.name }}</h3>
 
             <div class={{listClass[0]}} *ngIf="allMoviesList">

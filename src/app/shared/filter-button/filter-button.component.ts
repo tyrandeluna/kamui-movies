@@ -86,7 +86,15 @@ export class FilterButtonComponent implements OnInit {
 
   //send the genre selected to the service
   genreToFilter(genre: string) {
-    this.filterService.getGenre(genre)
+    if(genre !== '') {
+      for(let i = 0; i < this.allGenres.length; i++) {
+        if(this.allGenres[i].name === genre) {
+          this.filterService.getGenre(this.allGenres[i].id)
+        }
+      }
+    } else {
+      this.filterService.getGenre(0)
+    }
   }
 
   //click outside to close the menu too

@@ -16,7 +16,7 @@ export class MoviesListComponent implements OnInit, OnDestroy {
   allMoviesList = []
   listClass: string[]
   loadedLines: number = 0
-  selectedGenre: string
+  selectedGenre: number
   sizeLoading: number = 3
   subscription: Subscription
   subCategory: Subscription 
@@ -48,10 +48,11 @@ export class MoviesListComponent implements OnInit, OnDestroy {
 
   //changes the array of categories to use based on filter
   activeGenreFilter() {
-    if(this.selectedGenre !== '') {
+    if(this.selectedGenre !== 0) {
       for(let i = 0; i < this.categoryList.length; i++) {
-        if(this.categoryList[i].name === this.selectedGenre) {
+        if(this.categoryList[i].id === this.selectedGenre) {
             this.categoryLoad = [this.categoryList[i]]
+            console.log(this.categoryLoad)
             this.allMoviesList = []
             this.getAllMovies(this.categoryLoad[0].id)
         }

@@ -3,11 +3,11 @@ import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class FilterMoviesService {
-    private dataStringSource = new BehaviorSubject<string>('');
+    private dataStringSource = new BehaviorSubject<number>(0);
 
   // Observable string stream
   dataString$ = this.dataStringSource.asObservable();
-    genre: string
+    genre: number
 
     public getGenre(genre){
         this.genre = genre;
