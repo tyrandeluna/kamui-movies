@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { MoviesService } from 'src/app/movie/movies.service';
+import { FilterMoviesService } from './filter-movies.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-filter-button',
@@ -57,7 +59,7 @@ export class FilterButtonComponent implements OnInit {
   route: Router
   allGenres = []
 
-  constructor(router: Router, private mService: MoviesService) {
+  constructor(router: Router, private mService: MoviesService, private filterService: FilterMoviesService) {
     this.animationState = 'hidden'
     this.genreState = 'hidden'
     this.route = router
@@ -66,8 +68,8 @@ export class FilterButtonComponent implements OnInit {
   ngOnInit(): void {
     this.mService.getGenresMovies().subscribe(response => {
       this.allGenres = response.genres
-      console.log(this.allGenres)
     })
+    
   }
 
   //shows/hide the div with filters
@@ -77,5 +79,9 @@ export class FilterButtonComponent implements OnInit {
 
   onToggleGenre() {
     this.genreState === 'hidden' ? this.genreState = 'shown' : this.genreState = 'hidden'
+  }
+
+  genreToFilter(genre: string) {
+    this.filterService.getGenre(genre)
   }
 }

@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-categories.component.scss']
 })
 export class AllCategoriesComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
