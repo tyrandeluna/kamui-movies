@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate, state } from '@angular/animations';
 import { MoviesService } from 'src/app/movie/movies.service';
@@ -73,15 +73,21 @@ export class FilterButtonComponent implements OnInit {
   }
 
   //shows/hide the div with filters
-  onToggle() {
+  onToggle(event: Event){
+    event.stopPropagation()
     this.animationState === 'hidden' ? this.animationState = 'shown' : this.animationState = 'hidden'
   }
 
-  onToggleGenre() {
+  onToggleGenre(event: Event) {
+    event.stopPropagation()
     this.genreState === 'hidden' ? this.genreState = 'shown' : this.genreState = 'hidden'
   }
 
   genreToFilter(genre: string) {
     this.filterService.getGenre(genre)
+  }
+
+  @HostListener('document:click', ['$event']) clickout(event) {
+    this.animationState = 'hidden'
   }
 }
