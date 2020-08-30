@@ -78,15 +78,18 @@ export class FilterButtonComponent implements OnInit {
     this.animationState === 'hidden' ? this.animationState = 'shown' : this.animationState = 'hidden'
   }
 
+  //show the genres
   onToggleGenre(event: Event) {
     event.stopPropagation()
     this.genreState === 'hidden' ? this.genreState = 'shown' : this.genreState = 'hidden'
   }
 
+  //send the genre selected to the service
   genreToFilter(genre: string) {
     this.filterService.getGenre(genre)
   }
 
+  //click outside to close the menu too
   @HostListener('document:click', ['$event']) clickout(event) {
     this.animationState = 'hidden'
   }

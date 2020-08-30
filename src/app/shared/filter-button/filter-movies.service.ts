@@ -8,8 +8,9 @@ export class FilterMoviesService {
   // Observable string stream
   dataString$ = this.dataStringSource.asObservable();
     genre: string
+
     public getGenre(genre){
         this.genre = genre;
         this.dataStringSource.next(this.genre);
-      }
+    }
 }
