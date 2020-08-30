@@ -1,5 +1,5 @@
 @import '../../../sass/variables.scss';
-
+ 
 .movie-list-container {
     display: flex;
     flex-direction: column;
@@ -29,6 +29,18 @@
     
         &::-webkit-scrollbar{
             display: none;
+        }
+    }
+
+    .movie-tiles-selected {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px 0px;
+        width: 100%;
+
+        app-movie-tile:nth-child(n + 3) {
+            margin-top: 22px;
         }
     }
 }

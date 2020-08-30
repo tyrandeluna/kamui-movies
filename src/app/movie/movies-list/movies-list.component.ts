@@ -12,19 +12,25 @@ import { FilterMoviesService } from 'src/app/shared/filter-button/filter-movies.
 export class MoviesListComponent implements OnInit, OnDestroy {
   categoryList = []
   categoryLoad = []
+  changeClass: boolean
   allMoviesList = []
+  listClass: string[]
   loadedLines: number = 0
   selectedGenre: string
   sizeLoading: number = 3
   subscription: Subscription
-  subCategory: Subscription
+  subCategory: Subscription 
 
   constructor(private mService: MoviesService, private filterService: FilterMoviesService) {
+    this.listClass = ['movie-tiles']
+    this.changeClass = false
+
     this.subscription = this.filterService.dataString$.subscribe(
       data => {
         if(this.selectedGenre !== data){
           this.selectedGenre = data;
           
+          this.changeClass = true
           this.activeGenreFilter()
         }
       });
@@ -54,11 +60,15 @@ export class MoviesListComponent implements OnInit, OnDestroy {
       //reset all over again
       this.categoryLoad = []
       this.categoryList = []
+      this.changeClass = false
       this.allMoviesList = []
+      this.listClass = this.changeClass ? ['movie-tiles-selected'] : ['movie-tiles']
       this.loadedLines = 0
       this.sizeLoading = 3
       this.loadMovies()
     }
+
+    this.listClass = this.changeClass ? ['movie-tiles-selected'] : ['movie-tiles']
   }
   
   //show the first 3 lines
