@@ -8,3 +8,26 @@
     color: $g-white;
     font-size: 20px;
 }
+
+@media only screen and (min-width: 720px) {
+    .fa {
+        cursor: pointer;
+    }
+
+    .fa-heart {
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken($main-purple, 10%);
+        }
+    }
+
+    .fa-heart-o {
+        font-size: 30px;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $main-purple;
+        }
+    }
+}

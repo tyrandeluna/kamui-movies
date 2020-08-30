@@ -1,0 +1,67 @@
+// this file contains all mixins to change the visualization from mobile to desktop, only of the components
+// where the scss file is a little bit big
+@import './variables.scss';
+
+//featured movie mixin
+@mixin featured-movie-desktop {
+    .action-buttons {
+        align-items: center;
+        font-size: 30px;
+        justify-content: flex-end;
+        width: 50%;
+
+        .watch-button {
+            font-size: 16px;
+            width: 160px;
+            height: 32px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: darken($main-purple, 10%);
+            }
+            &:active {
+                box-shadow: 0px 1px 0px $persian-indigo;
+                transform: translateY(2px);
+            }
+        }
+
+        app-favorite-button, .watch-button {
+            margin-right: 30px;
+        }
+
+        .more-details{ 
+            transition: color 0.3s;
+
+            &:hover {
+                color: $main-purple;
+            }
+        }
+    }
+
+    .featured-container {
+        background-position: 40% 30% !important;
+        height: 350px;
+    }    
+
+    .featured-data {
+        color: $g-white;
+        display: flex;
+        flex-direction: column;
+    
+        .featured-title {
+            font: 40px $roboto;
+            font-weight: 900;
+        }
+    
+        .featured-category {
+            display: flex;
+            font: 20px $roboto;
+            font-weight: 200;
+            justify-content: flex-start;
+    
+            .separators {
+                margin: 0 4px 0 4px;
+            }
+        }
+    }
+}
