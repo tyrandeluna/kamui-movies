@@ -4,10 +4,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 84px 0 50px 0;
+    padding: 44px 0 50px 0;
     width: 100%;
 
-    app-movie-tile:nth-child(n + 3) {
+    app-movie-tile {
         margin-top: 22px;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .favorite-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 64px 20px 0 20px;
+        width: 100%;
     }
 }
