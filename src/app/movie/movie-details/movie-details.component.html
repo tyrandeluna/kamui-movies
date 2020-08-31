@@ -7,52 +7,57 @@
         url(' + backdrop + ') 50%/200% no-repeat'}">
     </div>
 
+    <!-- this div only appears in desktop version to change the background color -->
+    <div class="color-background"></div>
+
     <div class="movie-details-container">
         <div class="movie-cover" [ngStyle]="{'background': 'url('+ cover +')  0px 20px/100% no-repeat'}"></div>
     
-        <section class="movie-info">
-            <h1 class="title">{{ title }}</h1>
-            <span class="info">
-                <span *ngFor="let genre of genres; index as i">
-                    {{ genres[i].name }}
-
-                    <!-- prevents a lonely dot in the end -->
-                    <span class="separators" *ngIf="i != genres.length - 1"> • </span>
+        <div class="all-details">
+            <section class="movie-info">
+                <h1 class="title">{{ title }}</h1>
+                <span class="info">
+                    <span *ngFor="let genre of genres; index as i">
+                        {{ genres[i].name }}
+    
+                        <!-- prevents a lonely dot in the end -->
+                        <span class="separators" *ngIf="i != genres.length - 1"> • </span>
+                    </span>
+    
+                    {{ year }}
+                    {{ duration }}
+    
+                    <span class="rating" [style.background]="rateColor">{{ rate }}</span>
                 </span>
-
-                {{ year }}
-                {{ duration }}
-
-                <span class="rating" [style.background]="rateColor">{{ rate }}</span>
-            </span>
-        </section>
-        
-        <div class="action-buttons">
-            <button class="watch-button">
-                <i class="fa fa-play" aria-hidden="true"></i>
-                WATCH
-            </button>
+            </section>
             
-            <app-favorite-button [movie]="movie"></app-favorite-button>
+            <div class="action-buttons">
+                <button class="watch-button">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                    WATCH
+                </button>
+                
+                <app-favorite-button [movie]="movie"></app-favorite-button>
+                
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+            </div>
             
-            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-        </div>
-        
-        <div class="movie-details">
-            <p class="synopsis">
-                {{ synopsis }}
-            </p>
-        
-            <p class="cast">
-                Cast: 
-                <span *ngFor="let actor of cast; index as i">
-                    {{ actor.name }}
-                    <span *ngIf="i != cast.length - 1">, </span>
-                </span>
-            </p>
-            <p class="direction">
-                Direction: {{ direction }}
-            </p>
+            <div class="movie-details">
+                <p class="synopsis">
+                    {{ synopsis }}
+                </p>
+            
+                <p class="cast">
+                    Cast: 
+                    <span *ngFor="let actor of cast; index as i">
+                        {{ actor.name }}
+                        <span *ngIf="i != cast.length - 1">, </span>
+                    </span>
+                </p>
+                <p class="direction">
+                    Direction: {{ direction }}
+                </p>
+            </div>
         </div>
     </div>
 </div>
