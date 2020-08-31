@@ -102,7 +102,8 @@ export class MoviesListComponent implements OnInit, OnDestroy {
       let startSlice = this.loadedLines
       let endSlice = this.loadedLines + this.sizeLoading
 
-      if (window.innerHeight + window.scrollY === document.body.scrollHeight) {
+      if (window.innerHeight + window.scrollY === document.body.scrollHeight || 
+          window.innerHeight + window.scrollY === document.body.scrollHeight + 66) {
         if(this.categoryList) {
           this.categoryLoad = this.categoryList.slice(0, endSlice)
           for(let i = startSlice; i < endSlice - 1; i++) {
