@@ -3,9 +3,13 @@
         <a routerLink="/">
             <img src="../../assets/headers/logo.svg" alt="Kamui Movies" class="logo">
         </a>
+
+        <!-- only appears in your respective page -->
+        <h2 class="title-page" *ngIf="route.url == '/favorites'">My Favorites</h2>
+        <h2 class="title-page" *ngIf="route.url == '/categories'">All Categories</h2>
     </div>
 
-    <div class="search">
+    <div class="search"> 
         <input class="search-input" type="text" placeholder="Search a movie..."/>
     </div>
 

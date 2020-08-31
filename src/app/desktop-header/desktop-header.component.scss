@@ -13,7 +13,12 @@
 }
 
 .logo-app {
+    align-items: center;
+    color: $main-purple;
     display: flex;
+    font: 16px $roboto;
+    //justify-content: flex-start;
+    width: 60%;
 
     .logo {
         width: 70%;
@@ -24,7 +29,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-    width: 20%;
+    width: 25%;
     
     a {
         color: $g-white;
@@ -55,7 +60,7 @@
     align-items: center;
     display: flex;
     justify-content: flex-end;
-    width: 80%;
+    width: 60%;
 
     .search-input {
         background: $g-white;
