@@ -13,6 +13,7 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FilterButtonComponent } from './shared/filter-button/filter-button.component';
+import { DesktopHeaderComponent } from './desktop-header/desktop-header.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FilterButtonComponent } from './shared/filter-button/filter-button.comp
     MobileMenuComponent,
     HeaderMobileComponent,
     HomePageComponent,
-    FilterButtonComponent
+    FilterButtonComponent,
+    DesktopHeaderComponent
   ],
   imports: [
     BrowserModule,

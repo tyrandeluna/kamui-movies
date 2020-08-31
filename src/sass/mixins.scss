@@ -2,7 +2,7 @@
 // where the scss file is a little bit big
 @import './variables.scss';
 
-//featured movie mixin
+/* FEATURED MOVIE MIXIN*/
 @mixin featured-movie-desktop {
     .action-buttons {
         align-items: center;
@@ -40,6 +40,7 @@
 
     .featured-container {
         background-position: 40% 30% !important;
+        margin: 74px 0 0 0;
         height: 350px;
     }    
 
