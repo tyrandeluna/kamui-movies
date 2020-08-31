@@ -1,13 +1,10 @@
 @import '../../../sass/variables.scss';
 
-app-favorite-button {
-}
-
 .movie-tile {
+    cursor: pointer;
     display: flex;
     height: 190px;
     width: 140px;
-    background: url(../../../assets/movies/john-wick-3.png);
     background-size: 100%;
     border-radius: 5px;
     padding: 6px;
