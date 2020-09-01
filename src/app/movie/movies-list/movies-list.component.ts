@@ -52,7 +52,6 @@ export class MoviesListComponent implements OnInit, OnDestroy {
       for(let i = 0; i < this.categoryList.length; i++) {
         if(this.categoryList[i].id === this.selectedGenre) {
             this.categoryLoad = [this.categoryList[i]]
-            console.log(this.categoryLoad)
             this.allMoviesList = []
             this.getAllMovies(this.categoryLoad[0].id)
         }
