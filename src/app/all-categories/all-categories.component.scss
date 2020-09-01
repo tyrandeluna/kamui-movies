@@ -1,9 +1,10 @@
 @import '../../sass/variables.scss';
 
 app-filter-button {
+    display: none;
     align-self: flex-end;
     margin: 10px 10px 0 0;
-}
+} 
 
 .categories-list {
     display: flex;
@@ -31,5 +32,11 @@ app-filter-button {
     .action-title, .drama-title, .thriller-title {
         color: $g-white;
         font: 20px $roboto;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    app-filter-button {
+        display: flex;
     }
 }

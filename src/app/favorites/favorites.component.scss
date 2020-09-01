@@ -1,7 +1,19 @@
 @import '../../sass/variables.scss';
 
+app-filter-button {
+    display: none;
+    align-self: flex-end;
+    margin: 20px 10px 0 0;
+}
+
 .favorite-list {
     display: flex;
+    flex-direction: column;
+}
+
+.movies {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 44px 0 50px 0;
@@ -13,11 +25,19 @@
 }
 
 @media only screen and (min-width: 720px) {
+    app-filter-button {
+        display: flex;
+    }
+    
     .favorite-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         padding: 64px 20px 0 20px;
         width: 100%;
+    }
+
+    .movies {
+        padding: 0 0 50px 0;
     }
 }
