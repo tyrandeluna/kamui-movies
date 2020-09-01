@@ -8,11 +8,11 @@ import { LoginModule } from './login/login.module';
 import { FavoritesModule } from './favorites/favorites.module';
 import { AllCategoriesModule } from './all-categories/categories.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { FilterButtonComponent } from './shared/filter-button/filter-button.component';
 import { DesktopHeaderComponent } from './desktop-header/desktop-header.component';
 
 
@@ -22,7 +22,6 @@ import { DesktopHeaderComponent } from './desktop-header/desktop-header.componen
     MobileMenuComponent,
     HeaderMobileComponent,
     HomePageComponent,
-    FilterButtonComponent,
     DesktopHeaderComponent
   ],
   imports: [
@@ -34,6 +33,7 @@ import { DesktopHeaderComponent } from './desktop-header/desktop-header.componen
     FavoritesModule,
     AllCategoriesModule,
     BrowserAnimationsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
