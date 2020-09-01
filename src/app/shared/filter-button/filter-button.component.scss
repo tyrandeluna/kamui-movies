@@ -30,6 +30,7 @@
 .filter-type {
     align-items: center;
     background: darken($main-purple, 5%);
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     font-size: 20px;
@@ -40,7 +41,6 @@
 
 .genres-list {
     background: darken($main-purple, 10%);
-    color: lighten($main-purple, 30%);
     display: flex;
     flex-direction: column;
     font-size: 18px;
@@ -49,7 +49,10 @@
     width: 100%;
 
     a {
+        color: lighten($main-purple, 30%);
+        cursor: pointer;
         margin: 0 0 10px 0;
+        transition: color 0.3s;
     }
 
     .genres {
@@ -61,4 +64,36 @@
 
 h2 {
     margin: 10px 0 0 10px;
+}
+
+@media only screen and (min-width: 720px) {
+    .filter-menu {
+        width: 30%;
+    }
+
+    .filter-type{
+        transition: background 0.3s;
+        &:hover {
+            background: darken($main-purple, 10%);
+        }
+    }
+
+    .genres-list{
+
+        a:hover {
+            color: darken($main-purple, 25%);
+        }
+
+        &::-webkit-scrollbar {
+            background-color: darken($main-purple, 15%);
+            border-radius: 10px;
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background-color: darken($main-purple, 25%);
+            border-radius: 10px;
+            display: block;
+        }
+    }
 }
