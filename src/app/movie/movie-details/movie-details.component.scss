@@ -64,7 +64,6 @@
     //background: url(../../../assets/movies/john-wick-3.png);
     background-repeat: no-repeat;
     background-size: 110%;
-    background-position: 40% 40%;
     display: flex;
     height: 264px;
     top: 70px;
@@ -153,16 +152,12 @@
         height: 100%;
         margin: 66px 0 0 0;
     }
-    
-    .movie-cover {
-       //transform: scale(2);
-    }
 
     .movie-details-container {
         border: solid white;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-around;
         padding: 10px;
         top: 112px;
     }
