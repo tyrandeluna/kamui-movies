@@ -104,7 +104,7 @@
     display: flex;
     flex-direction: column;
     font-family: $roboto;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
     text-align: center;
     width: 100%;
 
@@ -132,11 +132,27 @@
     .all-details {
         display: flex;
         flex-direction: column;
+        margin: 0 0 0 30px;
         width: 50%;
     }
 
     .action-buttons {
-        width: 32%;
+        width: 62%;
+
+        .watch-button {
+            font-size: 16px;
+            width: 210px;
+            height: 36px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: darken($main-purple, 10%);
+            }
+            &:active {
+                box-shadow: 0px 1px 0px $persian-indigo;
+                transform: translateY(2px);
+            }
+        }
     }
 
     .blur-banner {
@@ -148,21 +164,61 @@
         display: flex;
     }
 
+    .fa-thumbs-up {
+        cursor: pointer;
+        font-size: 30px;
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken($main-purple, 10%);
+        }
+    }
+
     .movie {
         height: 100%;
         margin: 66px 0 0 0;
     }
 
     .movie-details-container {
-        border: solid white;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 10px;
+        justify-content: flex-start;
+        padding: 30px;
         top: 112px;
     }
 
     .movie-info {
-        width: 50%;
+        align-items: flex-start;
+        height: 100%;
+        margin: 0 0 0 0;
+        text-align: left;
+        width: 100%;
+
+        .info {
+            font-size: 22px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 40px;
+        }
+    }
+
+    .movie-details {
+        color: $g-white;
+        display: flex;
+        flex-direction: column;
+        font-family: $roboto;
+        font-weight: 300;
+    
+        .cast, .direction {
+            font-weight: 250;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+    
+        .synopsis {
+            font-size: 16px;
+        }
     }
 }
