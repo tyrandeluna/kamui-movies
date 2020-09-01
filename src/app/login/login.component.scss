@@ -64,3 +64,9 @@
     padding: 72px 30px;
     width: 100%;
 }
+
+@media only screen and (min-width: 720px) {
+    .login-col {
+        margin: 40px 0 0 0;
+    }
+}
