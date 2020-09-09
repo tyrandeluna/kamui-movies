@@ -7,10 +7,7 @@
                 <app-movie-tile 
                     *ngFor="let movieEl of allMoviesList[i]"
                     [movie]="movieEl"
-                    [id]="movieEl.id"
                     [coverPath]="movieEl.poster_path"
-
-                    routerLink="/movie-details/{{movieEl.id}}"
                 >
                 </app-movie-tile>
             </div>

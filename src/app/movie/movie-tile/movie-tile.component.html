@@ -1,4 +1,7 @@
-<div *ngIf="movie" class="movie-tile" [ngStyle]="{'background': 'url('+ cover +')  0px 0px/100% no-repeat'}">
-    <app-favorite-button [movie]="movie"></app-favorite-button>
+<app-favorite-button [movie]="movie"></app-favorite-button>
+<div *ngIf="movie" 
+    class="movie-tile" 
+    [ngStyle]="{'background': 'url('+ cover +')  0px 0px/100% no-repeat'}"
+    routerLink="/movie-details/{{movie.id}}">
 </div>
  
