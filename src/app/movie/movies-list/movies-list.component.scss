@@ -1,5 +1,9 @@
 @import '../../../sass/variables.scss';
  
+app-movie-tile {
+    position: relative;
+}
+
 .movie-list-container {
     display: flex;
     flex-direction: column;
