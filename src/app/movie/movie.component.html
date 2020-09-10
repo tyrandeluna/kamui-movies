@@ -8,6 +8,8 @@
                 *ngFor="let movieEl of releasedMovies"
                 [movie]="movieEl"
                 [coverPath]="movieEl.poster_path"
+
+                routerLink="/movie-details/{{movieEl.id}}"
             >
             </app-movie-tile>
         </div>
@@ -20,7 +22,10 @@
             <app-movie-tile 
                 *ngFor="let movieEl of risingMovies"
                 [movie]="movieEl"
+                [id]="movieEl.id"
                 [coverPath]="movieEl.poster_path"
+
+                routerLink="/movie-details/{{movieEl.id}}"
             >
             </app-movie-tile>
         </div>

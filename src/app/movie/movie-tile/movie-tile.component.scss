@@ -1,11 +1,5 @@
 @import '../../../sass/variables.scss';
 
-app-favorite-button {
-    position: absolute;
-    z-index: 2;
-    margin: 6px 0 0 6px;
-}
-
 .movie-tile {
     cursor: pointer;
     display: flex;
@@ -14,5 +8,4 @@ app-favorite-button {
     background-size: 100%;
     border-radius: 5px;
     padding: 6px;
-    position: relative;
 }
